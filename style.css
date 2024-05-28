@@ -12,6 +12,20 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 36px;
+}
+
+#turn-text {
+  font-family: "Open Sans", sans-serif; /* Verwende die gewünschte Schriftart */
+  font-size: 24px; /* Ändere die Schriftgröße nach Bedarf */
+  color: white; /* Ändere die Textfarbe nach Bedarf */
+  text-align: center; /* Zentriere den Text */
+  margin-bottom: 20px; /* Füge etwas Abstand unter dem Text hinzu */
+}
+
+#turn-text .player-symbol {
+  font-size: 36px; /* Ändere die Schriftgröße des Symbols */
+  color: #ff6c37; /* Ändere die Farbe des Symbols */
 }
 
 table {
@@ -19,16 +33,22 @@ table {
   border: none; /* Äußeren Rahmen entfernen */
 }
 
+/* Standard-Styling für das Zellelement */
 td {
   width: 100px;
   height: 100px;
-  border: 5px solid #ffffff; /* Weiße Border-Farbe */
+  border: 5px solid white;
   text-align: center;
-  font-size: 24px;
-  font-weight: 900; /* Schriftstärke */
+  font-size: 48px;
+  font-weight: 900;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
+/* Hover-Effekt nur auf leere Zellen anwenden, wenn das Spiel nicht vorbei ist */
+td:not(.game-over):not(:has(svg)):hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
 table tr:first-child td {
   border-top: 0;
 }
@@ -40,6 +60,27 @@ table tr:last-child td {
 }
 table tr td:last-child {
   border-right: 0;
+}
+
+/* Reset button */
+
+#reset-button {
+  background-color: #4caf50; /* Grün */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 40px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Übergang für die Hintergrundfarbe */
+}
+
+#reset-button:hover {
+  background-color: #5acf60; /* Dunkleres Grün beim Hover */
 }
 
 /* O Animation */
@@ -70,4 +111,19 @@ table tr td:last-child {
 
 .stroke-animation line {
   animation: stroke 750ms forwards; /* Animation für das Zeichnen des Strichs */
+}
+
+.winning-cell {
+  background-color: rgba(255, 255, 255, 0.5); /* Hintergrundfarbe für gewinnende Zellen */
+  position: relative;
+}
+
+.winning-cell::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px; /* Höhe des Strichs */
+  background-color: #00b0ef; /* Farbe des Strichs */
 }

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/tic-tac-toe.png" />
     <title>Tic Tac Toe</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -11,7 +12,11 @@
   <body>
     <h1>Tic Tac Toe</h1>
 
+    <div id="turn-text">Spieler <span class="player-symbol">X</span> beginnt!</div>
+
     <div id="container"></div>
+
+    <button onclick="resetGame()" id="reset-button">Reset</button>
 
     <script src="script.js"></script>
   </body>
