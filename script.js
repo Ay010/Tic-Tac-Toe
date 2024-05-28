@@ -105,7 +105,8 @@ function checkGameOver() {
   // Überprüfen, ob das Spiel unentschieden ist
   if (!fields.includes(null)) {
     // Keine leeren Felder mehr vorhanden
-    alert("Unentschieden!");
+    document.getElementById("turn-text").innerHTML = `Unentschieden!`;
+    document.getElementById("turn-text").style.fontSize = "40px";
     return true; // Spiel vorbei
   }
 

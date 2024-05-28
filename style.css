@@ -20,7 +20,7 @@ h1 {
   font-size: 24px; /* Ändere die Schriftgröße nach Bedarf */
   color: white; /* Ändere die Textfarbe nach Bedarf */
   text-align: center; /* Zentriere den Text */
-  margin-bottom: 20px; /* Füge etwas Abstand unter dem Text hinzu */
+  margin-bottom: 50px; /* Füge etwas Abstand unter dem Text hinzu */
 }
 
 #turn-text .player-symbol {
